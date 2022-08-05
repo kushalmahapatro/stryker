@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:stryker/features/google_login/presenter/api/google_login_api.dart';
 import 'package:stryker/stryker.dart';
 
@@ -5,6 +6,8 @@ class GoogleLoginBloc extends Bloc<LoadAction, LoginResult?> {
   GoogleLoginBloc() : super(null) {
     on<LoginAction>((event, emit) async {
       final result = await googleLoginApi(event.context);
+
+      final fcmToken = await FirebaseMessaging.instance.getToken();
 
       emit(LoginResult(
           status: result.status,
