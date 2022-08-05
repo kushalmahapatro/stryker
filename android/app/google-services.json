@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "170901196685",
+    "project_id": "stryker-e328a",
+    "storage_bucket": "stryker-e328a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170901196685:android:d2f3b48485f8236b57b7c4",
+        "android_client_info": {
+          "package_name": "com.example.stryker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170901196685-ma844ppocogjc7h9bn4ifrcb6cmidnqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx6MYaOotU-4lb9Ybra_ZYEYSW063Dp_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170901196685-ma844ppocogjc7h9bn4ifrcb6cmidnqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
