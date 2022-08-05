@@ -44,4 +44,16 @@ extension WidgetExtensions on Widget {
       child: this,
     );
   }
+
+  Widget button(BuildContext context,
+      {@required void Function()? onTap, Color? color, double? size}) {
+    return SizedBox(
+      child: Material(
+        color: color ?? context.colors.primary,
+        elevation: 3,
+        shadowColor: context.colors.surface,
+        child: TextButton(onPressed: onTap, child: this),
+      ),
+    );
+  }
 }

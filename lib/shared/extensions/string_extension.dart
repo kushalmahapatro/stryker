@@ -20,11 +20,30 @@ extension StringExtension on String {
     );
   }
 
+  Widget buttonStyle(BuildContext context) {
+    return Text(
+      toUpperCase(),
+      style: context.textTheme.bodyText1!.copyWith(
+          color: context.colors.background, fontWeight: FontWeight.bold),
+    );
+  }
+
   void showSnackBar(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(this),
       ),
+    );
+  }
+
+  Widget assetImage(
+      {double? width, double? height, BoxFit? fit, Color? color}) {
+    return Image.asset(
+      this,
+      width: width,
+      height: height,
+      fit: fit,
+      color: color,
     );
   }
 }

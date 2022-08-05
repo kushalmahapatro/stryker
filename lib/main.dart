@@ -1,11 +1,13 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:stryker/firebase_options.dart';
+import 'package:stryker/shared/patient_router.dart';
 import 'package:stryker/shared/router.dart';
 import 'package:stryker/stryker.dart';
 
 void main() async {
   // turn off the # in the URLs on the web
+  WidgetsFlutterBinding.ensureInitialized();
   GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -25,6 +27,10 @@ class MyApp extends StatelessWidget {
       lightColorScheme: lightColorScheme,
       themeMode: ThemeMode.light,
     ));
+    GoRouter router =
+        const String.fromEnvironment('TYPE', defaultValue: "doctor") == "doctor"
+            ? doctorRouter
+            : patientRouter;
 
     return DynamicColorBuilder(
       builder: (lightDynamic, darkDynamic) => ThemeProvider(
@@ -40,17 +46,13 @@ class MyApp extends StatelessWidget {
               valueListenable: settings,
               builder: (context, value, _) {
                 final theme = ThemeProvider.of(context);
-                return /* MultiBlocProvider(
-                    providers: const [],
-                    child: */
-                    MaterialApp.router(
+                return MaterialApp.router(
                   debugShowCheckedModeBanner: false,
                   theme: theme.light(),
                   darkTheme: theme.dark(),
                   themeMode: theme.themeMode(),
-                  routeInformationParser: appRouter.routeInformationParser,
-                  routerDelegate: appRouter.routerDelegate,
-                  /* ) */
+                  routeInformationParser: router.routeInformationParser,
+                  routerDelegate: router.routerDelegate,
                 );
               },
             ),

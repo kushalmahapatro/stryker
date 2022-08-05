@@ -10,7 +10,7 @@ extension ScreenNameExtension on ScreenName {
   String get routes => name.toLowerCase();
 }
 
-final appRouter = GoRouter(
+final doctorRouter = GoRouter(
   routes: [
     /// Dashboard
     GoRoute(

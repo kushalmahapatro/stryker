@@ -7,7 +7,8 @@
         {
             "name": "stryker",
             "request": "launch",
-            "type": "dart"
+            "type": "dart", 
+            "args": ["--dart-define", "TYPE=${input:type}"]
         },
         {
             "name": "stryker (profile mode)",
@@ -21,5 +22,13 @@
             "type": "dart",
             "flutterMode": "release"
         }
-    ]
+    ],
+    "inputs": [
+        {
+          "id": "type",
+          "description": "Please pick the type",
+          "default": "doctor",
+          "type": "pickString",
+          "options": ["doctor", "patient"],
+        }]
 }
