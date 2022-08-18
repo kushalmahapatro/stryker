@@ -1,23 +1,18 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:stryker/features/google_login/entity/api_return.dart';
+import 'package:stryker/firebase_options.dart';
 import 'package:stryker/stryker.dart';
 
-Future<ApiReturn> googleLoginApi(
-  BuildContext context,
-) async {
+Future<ApiReturn> googleLoginApi() async {
   /// Google login API call
   GoogleSignIn googleSignIn = GoogleSignIn(
-    clientId:
-        'com.googleusercontent.apps.170901196685-lludvo7hj19vprdl742vo61492bhv19s',
-    scopes: <String>[
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ],
+    clientId: DefaultFirebaseOptions.currentPlatform.iosClientId,
   );
 
   String returnMsg = "";
   String name = "";
   String email = "";
+  String profileImage = '';
   bool val = false;
   try {
     GoogleSignInAccount? account = await googleSignIn.signIn();
@@ -26,6 +21,7 @@ Future<ApiReturn> googleLoginApi(
       val = true;
       email = account?.email ?? '';
       name = account?.displayName ?? '';
+      profileImage = account?.photoUrl ?? '';
     } else {
       returnMsg = "Something wrong happened while trying to login with Google";
     }
@@ -35,5 +31,5 @@ Future<ApiReturn> googleLoginApi(
   }
 
   await Future.delayed(const Duration(milliseconds: 1200));
-  return ApiReturn(val, returnMsg, name, email);
+  return ApiReturn(val, returnMsg, name, email, profileImage);
 }

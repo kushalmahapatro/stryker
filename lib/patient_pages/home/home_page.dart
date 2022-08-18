@@ -2,8 +2,8 @@ import 'package:stryker/features/google_login/view/google_login_button.dart';
 import 'package:stryker/shared/assets/stryker_assets.dart';
 import 'package:stryker/stryker.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class PatientHomePage extends StatelessWidget {
+  const PatientHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

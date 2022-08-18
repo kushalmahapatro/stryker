@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 import 'package:stryker/stryker.dart';
 
 class CreateTaskInteractors {
@@ -10,8 +10,17 @@ class CreateTaskInteractors {
       String patient) async {
     CollectionReference tasks = FirebaseFirestore.instance.collection('tasks');
 
+    String date = DateFormat('dd MMM yyyy').format(DateTime.now());
+    String time = DateFormat('hh:mm a').format(DateTime.now());
+
     tasks
-        .add({'title': title, 'description': description, 'patient': patient})
+        .add({
+          'title': title,
+          'description': description,
+          'patient': patient,
+          'date': date,
+          'time': time,
+        })
         .then((value) => 'Task created successfully'.showSnackBar(context))
         .catchError((error) => 'Error in creating task'.showSnackBar(context));
 

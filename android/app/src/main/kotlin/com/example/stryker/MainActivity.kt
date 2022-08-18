@@ -1,4 +1,4 @@
-package com.example.stryker
+package com.app.stryker
 
 import io.flutter.embedding.android.FlutterActivity
 

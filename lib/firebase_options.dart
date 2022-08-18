@@ -45,17 +45,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyA6orfj6dIf6hJUThokWy26nZYynlIZbf4',
-    appId: '1:170901196685:web:2c8ff8ec3341ed0457b7c4',
+    appId: '1:170901196685:web:8ba38c4383ad33d557b7c4',
     messagingSenderId: '170901196685',
     projectId: 'stryker-e328a',
     authDomain: 'stryker-e328a.firebaseapp.com',
     storageBucket: 'stryker-e328a.appspot.com',
-    measurementId: 'G-D0C9WMFFRJ',
+    measurementId: 'G-E9Z4VC8CWE',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCx6MYaOotU-4lb9Ybra_ZYEYSW063Dp_A',
-    appId: '1:170901196685:android:d2f3b48485f8236b57b7c4',
+    appId: '1:170901196685:android:ad27e4225ae8754e57b7c4',
     messagingSenderId: '170901196685',
     projectId: 'stryker-e328a',
     storageBucket: 'stryker-e328a.appspot.com',
@@ -63,21 +63,21 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyD3-l6N34AhfFB8_fA670K5O_UuNse2usY',
-    appId: '1:170901196685:ios:d5bdd8072b5be8d257b7c4',
+    appId: '1:170901196685:ios:e85241df47321f8357b7c4',
     messagingSenderId: '170901196685',
     projectId: 'stryker-e328a',
     storageBucket: 'stryker-e328a.appspot.com',
-    iosClientId: '170901196685-lludvo7hj19vprdl742vo61492bhv19s.apps.googleusercontent.com',
-    iosBundleId: 'com.example.stryker',
+    iosClientId: '170901196685-26nb0bik471jmih91cj2pb87jrc6kmbe.apps.googleusercontent.com',
+    iosBundleId: 'com.app.stryker',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyD3-l6N34AhfFB8_fA670K5O_UuNse2usY',
-    appId: '1:170901196685:ios:d5bdd8072b5be8d257b7c4',
+    appId: '1:170901196685:ios:e85241df47321f8357b7c4',
     messagingSenderId: '170901196685',
     projectId: 'stryker-e328a',
     storageBucket: 'stryker-e328a.appspot.com',
-    iosClientId: '170901196685-lludvo7hj19vprdl742vo61492bhv19s.apps.googleusercontent.com',
-    iosBundleId: 'com.example.stryker',
+    iosClientId: '170901196685-26nb0bik471jmih91cj2pb87jrc6kmbe.apps.googleusercontent.com',
+    iosBundleId: 'com.app.stryker',
   );
 }

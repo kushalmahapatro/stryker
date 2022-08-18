@@ -1,9 +1,12 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stryker/firebase_options.dart';
 import 'package:stryker/shared/patient_router.dart';
 import 'package:stryker/shared/router.dart';
 import 'package:stryker/stryker.dart';
+
+late SharedPreferences pref;
 
 void main() async {
   // turn off the # in the URLs on the web
@@ -12,6 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  pref = await SharedPreferences.getInstance();
 
   runApp(const MyApp());
 }

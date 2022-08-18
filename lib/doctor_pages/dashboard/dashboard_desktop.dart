@@ -1,4 +1,4 @@
-import 'package:stryker/pages/dashboard/components/dashboard_appbar.dart';
+import 'package:stryker/doctor_pages/dashboard/components/dashboard_appbar.dart';
 import 'package:stryker/stryker.dart';
 
 class DashboardDesktop extends StatelessWidget {

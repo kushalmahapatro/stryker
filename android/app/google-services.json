@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:170901196685:android:d2f3b48485f8236b57b7c4",
+        "mobilesdk_app_id": "1:170901196685:android:ad27e4225ae8754e57b7c4",
         "android_client_info": {
-          "package_name": "com.example.stryker"
+          "package_name": "com.app.stryker"
         }
       },
       "oauth_client": [
@@ -29,6 +29,13 @@
             {
               "client_id": "170901196685-ma844ppocogjc7h9bn4ifrcb6cmidnqk.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "170901196685-lludvo7hj19vprdl742vo61492bhv19s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.stryker"
+              }
             }
           ]
         }

@@ -1,5 +1,5 @@
-import 'package:stryker/pages/dashboard/dashboard_desktop.dart';
-import 'package:stryker/pages/dashboard/dashboard_mobile.dart';
+import 'package:stryker/doctor_pages/dashboard/dashboard_desktop.dart';
+import 'package:stryker/doctor_pages/dashboard/dashboard_mobile.dart';
 import 'package:stryker/stryker.dart';
 
 class DashboardPage extends StatelessWidget {

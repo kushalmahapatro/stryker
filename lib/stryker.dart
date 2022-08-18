@@ -18,10 +18,13 @@ export 'package:stryker/shared/theme/lib_color_schemes.g.dart';
 
 export 'package:go_router/go_router.dart';
 
+export 'package:cloud_firestore/cloud_firestore.dart';
+
 export 'package:stryker/main.dart';
 
 export 'package:stryker/shared/shared.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:bloc/bloc.dart';
 
-export 'package:stryker/pages/pages.dart';
+export 'package:stryker/doctor_pages/pages.dart';
+export 'package:stryker/patient_pages/patient_pages.dart';

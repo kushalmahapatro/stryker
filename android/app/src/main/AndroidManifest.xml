@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.stryker">
+    package="com.app.stryker">
    <application
         android:label="stryker"
         android:name="${applicationName}"

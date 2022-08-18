@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>170901196685-lludvo7hj19vprdl742vo61492bhv19s.apps.googleusercontent.com</string>
+	<string>170901196685-26nb0bik471jmih91cj2pb87jrc6kmbe.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.170901196685-lludvo7hj19vprdl742vo61492bhv19s</string>
+	<string>com.googleusercontent.apps.170901196685-26nb0bik471jmih91cj2pb87jrc6kmbe</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD3-l6N34AhfFB8_fA670K5O_UuNse2usY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.stryker</string>
+	<string>com.app.stryker</string>
 	<key>PROJECT_ID</key>
 	<string>stryker-e328a</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:170901196685:ios:d5bdd8072b5be8d257b7c4</string>
+	<string>1:170901196685:ios:e85241df47321f8357b7c4</string>
 </dict>
 </plist>
