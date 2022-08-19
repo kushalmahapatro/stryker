@@ -28,7 +28,7 @@ exports.senddevices = functions.firestore
           tokens = doc.get('fcmToken');
         });
 
-        console.log(tokens);
+      console.log(tokens);
       return admin.messaging()
           .sendToDevice(tokens, payload).then((response) => {
             console.log("pushed them all");
