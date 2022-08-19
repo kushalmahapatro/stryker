@@ -4,12 +4,13 @@ const admin = require("firebase-admin");
 
 admin.initializeApp(functions.config().firebase);
 
+
 exports.senddevices = functions.firestore
     .document("tasks/{id}")
-    .onCreate((snapshot, context) => {
+    .onCreate( async (snapshot, context) => {
+      const patientEmail = snapshot.get("patient");
       const name = snapshot.get("title");
       const subject = snapshot.get("description");
-      const token = snapshot.get("token");
 
       const payload = {
         notification: {
@@ -18,12 +19,22 @@ exports.senddevices = functions.firestore
           sound: "default",
         },
       };
+      let tokens = "";
+      console.log(patientEmail);
+      const collRef = admin.firestore().collection("patients");
+      const coll = await collRef.where("email", "==", patientEmail).get();
+        coll.forEach((doc) => {
+          console.log(doc.id, "=>", doc.data());
+          tokens = doc.get('fcmToken');
+        });
 
+        console.log(tokens);
       return admin.messaging()
-          .sendToDevice(token, payload).then((response) => {
+          .sendToDevice(tokens, payload).then((response) => {
             console.log("pushed them all");
           }).catch((err) => {
             console.log(err);
           });
     }
     );
+
