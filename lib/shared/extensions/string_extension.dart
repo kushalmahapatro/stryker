@@ -2,9 +2,14 @@ import 'package:stryker/stryker.dart';
 
 extension StringExtension on String {
   Widget button(BuildContext context,
-      {@required void Function()? onTap, Color? color, double? size}) {
+      {@required void Function()? onTap,
+      Color? color,
+      double? size,
+      double? radius}) {
     return SizedBox(
       child: Material(
+        clipBehavior: Clip.antiAlias,
+        borderRadius: BorderRadius.circular(radius ?? 0),
         color: color ?? context.colors.primary,
         elevation: 3,
         shadowColor: context.colors.surface,

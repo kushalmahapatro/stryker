@@ -1,5 +1,6 @@
 import 'package:stryker/doctor_pages/create_task/components/create_task_appbar.dart';
 import 'package:stryker/doctor_pages/create_task/interactors/create_task_interactors.dart';
+import 'package:stryker/doctor_pages/dashboard/dashboard_desktop.dart';
 import 'package:stryker/stryker.dart';
 
 class CreateTaskDesktop extends StatefulWidget {
@@ -12,10 +13,11 @@ class CreateTaskDesktop extends StatefulWidget {
 class _CreateTaskDesktopState extends State<CreateTaskDesktop> {
   late TextEditingController _titleController;
   late TextEditingController _descriptionController;
-  final Stream<QuerySnapshot> _patientStream =
-      FirebaseFirestore.instance.collection('patients').snapshots();
 
   String selectedPatient = '';
+
+  final Stream<QuerySnapshot> patientStream =
+      FirebaseFirestore.instance.collection('patients').snapshots();
 
   @override
   void initState() {
@@ -46,7 +48,7 @@ class _CreateTaskDesktopState extends State<CreateTaskDesktop> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   StreamBuilder<QuerySnapshot>(
-                      stream: _patientStream,
+                      stream: patientStream,
                       builder: (BuildContext context,
                           AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasError) {

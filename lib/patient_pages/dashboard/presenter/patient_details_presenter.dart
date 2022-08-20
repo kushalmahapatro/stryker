@@ -1,15 +1,12 @@
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stryker/stryker.dart';
 
 class PatientDetailsBloc extends Bloc<LoadAction, PatientDetailsResult?> {
   PatientDetailsBloc() : super(null) {
-    on<PatientDetailsAction>((event, emit) async {
-      SharedPreferences pref = await SharedPreferences.getInstance();
-
+    on<PatientDetailsAction>((event, emit) {
       emit(PatientDetailsResult(
-        name: pref.getString('name') ?? '',
-        email: pref.getString('email') ?? '',
-        profileImage: pref.getString('profileImage') ?? '',
+        name: event.name,
+        email: event.email,
+        profileImage: event.profileImage,
       ));
     });
   }
@@ -17,7 +14,13 @@ class PatientDetailsBloc extends Bloc<LoadAction, PatientDetailsResult?> {
 
 @immutable
 class PatientDetailsAction implements LoadAction {
-  const PatientDetailsAction() : super();
+  const PatientDetailsAction(
+      {required this.name, required this.email, required this.profileImage})
+      : super();
+
+  final String name;
+  final String email;
+  final String profileImage;
 }
 
 @immutable

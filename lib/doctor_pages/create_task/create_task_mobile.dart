@@ -9,6 +9,7 @@ class CreateTaskMobile extends StatelessWidget {
     return Scaffold(
       appBar: const DashboardAppBar(
         isDesktop: true,
+        email: '',
       ),
       body: Container(
         padding: const EdgeInsets.all(20),

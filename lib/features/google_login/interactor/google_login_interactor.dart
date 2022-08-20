@@ -1,4 +1,3 @@
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stryker/features/google_login/presenter/google_login_presenter.dart';
 import 'package:stryker/shared/patient_router.dart';
 import 'package:stryker/stryker.dart';

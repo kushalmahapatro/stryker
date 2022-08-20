@@ -8,7 +8,7 @@
             "name": "stryker",
             "request": "launch",
             "type": "dart", 
-            "args": ["--dart-define", "TYPE=${input:type}"]
+            "args": ["--dart-define", "TYPE=${input:type}", "--web-renderer html"]
         },
         {
             "name": "stryker (profile mode)",

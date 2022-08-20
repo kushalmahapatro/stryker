@@ -34,7 +34,7 @@ class DetailsWidget extends StatelessWidget {
                   children: [
                     Text(
                       state.name ?? '',
-                      style: context.textTheme.headlineMedium!.copyWith(
+                      style: context.textTheme.headlineSmall!.copyWith(
                           fontWeight: FontWeight.bold,
                           color: context.colors.primary),
                     ),

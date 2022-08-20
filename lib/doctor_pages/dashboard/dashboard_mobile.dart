@@ -7,7 +7,10 @@ class DashboardMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DashboardAppBar(isDesktop: false),
+      appBar: const DashboardAppBar(
+        isDesktop: false,
+        email: '',
+      ),
       body: Container(
         padding: const EdgeInsets.all(10),
         child: Text(

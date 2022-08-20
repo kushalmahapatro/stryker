@@ -1,17 +1,21 @@
+import 'dart:math';
+
 import 'package:stryker/doctor_pages/dashboard/interactors/dashboard_interactors.dart';
 import 'package:stryker/shared/assets/stryker_assets.dart';
 import 'package:stryker/stryker.dart';
 
 class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
   final bool isDesktop;
-  const DashboardAppBar({super.key, this.isDesktop = false});
+  final String email;
+  const DashboardAppBar(
+      {super.key, this.isDesktop = false, required this.email});
 
   @override
   Widget build(BuildContext context) {
     List<Widget> actions = [];
     if (isDesktop) {
       actions.add("Create Task".button(context, onTap: () {
-        DashboardInteractors.createTaskClick(context);
+        DashboardInteractors.createTaskClick(context, email);
       }));
     }
 

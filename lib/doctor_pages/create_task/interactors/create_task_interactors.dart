@@ -20,6 +20,8 @@ class CreateTaskInteractors {
           'patient': patient,
           'date': date,
           'time': time,
+          'status': 0,
+          'timestamp': DateTime.now().millisecondsSinceEpoch
         })
         .then((value) => 'Task created successfully'.showSnackBar(context))
         .catchError((error) => 'Error in creating task'.showSnackBar(context));

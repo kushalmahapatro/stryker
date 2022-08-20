@@ -1,4 +1,6 @@
 import 'package:stryker/doctor_pages/create_task/create_task_page.dart';
+import 'package:stryker/features/patient_tasks/presenter/patient_task_presenter.dart';
+import 'package:stryker/patient_pages/dashboard/presenter/patient_details_presenter.dart';
 import 'package:stryker/stryker.dart';
 
 enum ScreenName {
@@ -16,7 +18,13 @@ final doctorRouter = GoRouter(
     GoRoute(
       name: ScreenName.dashboard.routes,
       path: '/',
-      builder: (context, state) => const DashboardPage(),
+      builder: (context, state) => MultiBlocProvider(
+        providers: [
+          BlocProvider.value(value: PatientDetailsBloc()),
+          BlocProvider.value(value: PatientTaskBloc()),
+        ],
+        child: const DashboardPage(),
+      ),
     ),
 
     GoRoute(
