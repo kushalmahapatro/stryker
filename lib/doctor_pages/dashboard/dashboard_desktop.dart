@@ -79,103 +79,110 @@ class _DashboardDesktopState extends State<DashboardDesktop> {
                         }).toList();
 
                         int total = status.length;
-                        int pending = status
-                            .map((element) => element == "0" ? 1 : 0)
-                            .reduce((value, element) => value + element);
-                        int progress = status
-                            .map((element) => element == "1" ? 1 : 0)
-                            .reduce((value, element) => value + element);
-                        int completed = status
-                            .map((element) => element == "2" ? 1 : 0)
-                            .reduce((value, element) => value + element);
+                        if (total > 0) {
+                          int pending = status
+                              .map((element) => element == "0" ? 1 : 0)
+                              .reduce((value, element) => value + element);
+                          int progress = status
+                              .map((element) => element == "1" ? 1 : 0)
+                              .reduce((value, element) => value + element);
+                          int completed = status
+                              .map((element) => element == "2" ? 1 : 0)
+                              .reduce((value, element) => value + element);
 
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "Tasks Details:",
-                              style: context.titleLarge!
-                                  .copyWith(fontWeight: FontWeight.bold),
-                            ).paddingSymmetric(horizontal: 20),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Wrap(
-                              crossAxisAlignment: WrapCrossAlignment.start,
-                              runSpacing: 15,
-                              spacing: 15,
-                              children: [
-                                Text(
-                                  "Total created: $total",
-                                  style: context.titleMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  "Pending: $pending",
-                                  style: context.titleMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  "In Progress: $progress",
-                                  style: context.titleMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  "Completed: $completed",
-                                  style: context.titleMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ).paddingSymmetric(horizontal: 20),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Expanded(
-                              child: PieChart(
-                                PieChartData(
-                                    pieTouchData: PieTouchData(
-                                      enabled: true,
-                                    ),
-                                    sections: [
-                                      PieChartSectionData(
-                                          titleStyle: context.titleMedium!
-                                              .copyWith(
-                                                  fontWeight: FontWeight.bold),
-                                          title: "Pending",
-                                          showTitle: true,
-                                          color: Colors.blue,
-                                          value:
-                                              double.parse(pending.toString())),
-                                      PieChartSectionData(
-                                          titleStyle: context.titleMedium!
-                                              .copyWith(
-                                                  fontWeight: FontWeight.bold),
-                                          title: "In Progress",
-                                          showTitle: true,
-                                          color: Colors.yellow,
-                                          value: double.parse(
-                                              progress.toString())),
-                                      PieChartSectionData(
-                                          titleStyle: context.titleMedium!
-                                              .copyWith(
-                                                  fontWeight: FontWeight.bold),
-                                          title: "Completed",
-                                          showTitle: true,
-                                          color: Colors.green,
-                                          value: double.parse(
-                                              completed.toString())),
-                                    ]),
-                                swapAnimationDuration: const Duration(
-                                    milliseconds: 150), // Optional
-                                swapAnimationCurve: Curves.linear, // Optional
-                              ).paddingAll(50),
-                            ),
-                          ],
-                        );
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                "Tasks Details:",
+                                style: context.titleLarge!
+                                    .copyWith(fontWeight: FontWeight.bold),
+                              ).paddingSymmetric(horizontal: 20),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Wrap(
+                                crossAxisAlignment: WrapCrossAlignment.start,
+                                runSpacing: 15,
+                                spacing: 15,
+                                children: [
+                                  Text(
+                                    "Total created: $total",
+                                    style: context.titleMedium!
+                                        .copyWith(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "Pending: $pending",
+                                    style: context.titleMedium!
+                                        .copyWith(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "In Progress: $progress",
+                                    style: context.titleMedium!
+                                        .copyWith(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "Completed: $completed",
+                                    style: context.titleMedium!
+                                        .copyWith(fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ).paddingSymmetric(horizontal: 20),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Expanded(
+                                child: PieChart(
+                                  PieChartData(
+                                      pieTouchData: PieTouchData(
+                                        enabled: true,
+                                      ),
+                                      sections: [
+                                        PieChartSectionData(
+                                            titleStyle: context.titleMedium!
+                                                .copyWith(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                            title: "Pending",
+                                            showTitle: true,
+                                            color: Colors.blue,
+                                            value: double.parse(
+                                                pending.toString())),
+                                        PieChartSectionData(
+                                            titleStyle: context.titleMedium!
+                                                .copyWith(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                            title: "In Progress",
+                                            showTitle: true,
+                                            color: Colors.yellow,
+                                            value: double.parse(
+                                                progress.toString())),
+                                        PieChartSectionData(
+                                            titleStyle: context.titleMedium!
+                                                .copyWith(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                            title: "Completed",
+                                            showTitle: true,
+                                            color: Colors.green,
+                                            value: double.parse(
+                                                completed.toString())),
+                                      ]),
+                                  swapAnimationDuration: const Duration(
+                                      milliseconds: 150), // Optional
+                                  swapAnimationCurve: Curves.linear, // Optional
+                                ).paddingAll(50),
+                              ),
+                            ],
+                          );
+                        } else {
+                          return Center(child: Text("No data"));
+                        }
                       },
                     ),
                   ),

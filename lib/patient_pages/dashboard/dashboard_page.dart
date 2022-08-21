@@ -102,19 +102,25 @@ class _PatientDashboardPageState extends State<PatientDashboardPage>
                 PatientTaskView(
                   status: 0,
                   onTaskClicked: ((task) {
-                    DashboardInteractors.onTaskClick(context, task);
+                    if (widget.isPatient) {
+                      DashboardInteractors.onTaskClick(context, task);
+                    }
                   }),
                 ),
                 PatientTaskView(
                   status: 1,
                   onTaskClicked: ((task) {
-                    DashboardInteractors.onTaskClick(context, task);
+                    if (widget.isPatient) {
+                      DashboardInteractors.onTaskClick(context, task);
+                    }
                   }),
                 ),
                 PatientTaskView(
                   status: 2,
                   onTaskClicked: ((task) {
-                    DashboardInteractors.onTaskClick(context, task);
+                    if (widget.isPatient) {
+                      DashboardInteractors.onTaskClick(context, task);
+                    }
                   }),
                 )
               ],
